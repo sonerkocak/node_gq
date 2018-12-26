@@ -168,5 +168,5 @@ MongoClient.connect('mongodb://node:node12@ds143614.mlab.com:43614/merkez', { us
 
     // start server
     var port = process.env.PORT || 4000;
-    app.listen(port, () => console.log('Express GraphQL Server Now Running On localhost:'+port+'/graphql'));
+    app.listen(port, '0.0.0.0', () => console.log('Express GraphQL Server Now Running On localhost:'+port+'/graphql'));
 });
