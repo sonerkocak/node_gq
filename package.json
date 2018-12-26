@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon ./index.js"
+        "start": "node ./index.js"
     },
     "dependencies": {
         "graphql": "^14.0.2",
