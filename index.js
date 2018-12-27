@@ -117,7 +117,7 @@ function course(args, context) {
 	});
 }
 
-function courses({args, context}) {
+function courses(args, context) {
     yetkiKontrol(context, 'USER');
 
     const {topic} = args;
