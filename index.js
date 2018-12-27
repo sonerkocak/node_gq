@@ -4,6 +4,7 @@ const express_graphql = require('express-graphql');
 const jwt = require('express-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 const { GraphQLBoolean, GraphQLNonNull, GraphQLSchema, GraphQLInt, GraphQLList, GraphQLObjectType, GraphQLString } = require('graphql');
+const cors = require('cors');
 
 
 const JWT_SECRET = 'dev_secret_enough';
@@ -154,6 +155,7 @@ const auth = jwt({
 });
 
 const app = express();
+app.use(cors());
 
 app.use('/graphql', auth, express_graphql(req => ({
     schema,
