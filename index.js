@@ -62,7 +62,7 @@ const queryType = new GraphQLObjectType({
                     type: GraphQLString
                 }
             },
-            resolve: (_,args) => courses(args)
+            resolve: (_,args, context) => courses(args, context)
         }
 	}
 });
@@ -117,7 +117,9 @@ function course(args, context) {
 	});
 }
 
-function courses({topic}) {
+function courses({topic, context}) {
+    yetkiKontrol(context, 'USER');
+
     return new Promise((resolve, reject)=>{
     if (topic) {
         global.client.db(DB_NAME).collection('kurs').find({topic}).toArray()
